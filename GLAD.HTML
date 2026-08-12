@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Good Luck Auto Detailing</title>
+    <meta name="description" content="Premium car detailing, paint correction, ceramic coating, and auto restoration services." />
+    <style>
+        :root {
+            --bg: #0c1116;
+            --bg-soft: #121a20;
+            --panel: rgba(17, 25, 33, 0.9);
+            --panel-strong: #101a21;
+            --card: #14232d;
+            --text: #edf3f8;
+            --muted: #b3c0ca;
+            --gold: #d4af65;
+            --gold-strong: #f3c66d;
+            --accent: #5bc0be;
+            --shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+            --radius: 22px;
+            --max: 1200px;
+        }
+
+        * { box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(180deg, #081016 0%, #0d1419 100%);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(92%, var(--max));
+            margin: 0 auto;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(7, 11, 15, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .brand-mark {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), #8c6a37);
+            display: grid;
+            place-items: center;
+            color: #111;
+            font-weight: 900;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            color: var(--muted);
+            font-size: 0.96rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 0;
+            border-radius: 999px;
+            padding: 0.9rem 1.4rem;
+            font-weight: 700;
+            font-size: 0.96rem;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--gold-strong));
+            color: #0d0d0d;
+            box-shadow: 0 12px 36px rgba(212, 175, 101, 0.35);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.04);
+            color: var(--text);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            background-image: linear-gradient(90deg, rgba(5, 8, 12, 0.92), rgba(12, 17, 22, 0.7)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 760px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 2rem;
+            align-items: center;
+            padding: 5rem 0 4rem;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.5rem 0.9rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.06);
+            color: var(--gold);
+        }
+
+        .hero-copy h1 {
+            font-size: clamp(2.8rem, 5vw, 5rem);
+            line-height: 0.95;
+            margin: 1rem 0;
+            letter-spacing: -0.05em;
+        }
+
+        .lead {
+            font-size: 1.15rem;
+            color: var(--muted);
+            max-width: 610px;
+            margin-bottom: 2rem;
+        }
+
+        .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.2rem;
+            padding-top: 0.8rem;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 2rem;
+            color: var(--text);
+            line-height: 1;
+        }
+
+        .stat span {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .hero-card {
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            background: rgba(10, 16, 20, 0.75);
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: var(--shadow);
+        }
+
+        .card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .mini-label {
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.72rem;
+        }
+
+        .badge {
+            background: rgba(91,192,190,0.14);
+            color: var(--accent);
+            border: 1px solid rgba(91,192,190,0.2);
+            padding: 0.35rem 0.8rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .service-preview {
+            margin-top: 1rem;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .service-preview img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-heading {
+            margin-bottom: 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 2rem;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin: 0;
+            line-height: 1.1;
+            letter-spacing: -0.05em;
+        }
+
+        .section-heading p {
+            margin: 0;
+            color: var(--muted);
+            max-width: 620px;
+        }
+
+        .feature-grid,
+        .package-grid,
+        .gallery-grid,
+        .testimonial-grid,
+        .step-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .feature-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .feature-card,
+        .package-card,
+        .testimonial,
+        .step-card {
+            background: linear-gradient(180deg, rgba(16, 24, 29, 0.9), rgba(12, 17, 21, 0.98));
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-card {
+            padding: 1.5rem;
+        }
+
+        .icon-circle {
+            width: 54px;
+            height: 54px;
+            border-radius: 16px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, rgba(212, 175, 101, 0.16), rgba(91, 192, 190, 0.18));
+            color: var(--gold-strong);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3,
+        .package-card h3,
+        .step-card h3 {
+            margin: 0 0 0.7rem;
+            font-size: 1.35rem;
+        }
+
+        .feature-card p,
+        .package-card p,
+        .step-card p,
+        .testimonial p,
+        .contact-card p,
+        .footer-copy {
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .about {
+            background: linear-gradient(180deg, rgba(9, 13, 17, 0.8), rgba(15, 21, 26, 0.96));
+        }
+
+        .about-wrap {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-visual {
+            position: relative;
+            min-height: 500px;
+            border-radius: 30px;
+            overflow: hidden;
+            background: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80') center/cover;
+            box-shadow: var(--shadow);
+        }
+
+        .about-badge {
+            position: absolute;
+            right: 1.5rem;
+            bottom: 1.5rem;
+            background: rgba(11, 17, 21, 0.86);
+            border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 18px;
+            padding: 1rem 1.2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .about-badge strong {
+            display: block;
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        .about-copy ul {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0 0;
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        .about-copy li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--muted);
+        }
+
+        .check {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: rgba(212, 175, 101, 0.18);
+            color: var(--gold-strong);
+            display: grid;
+            place-items: center;
+            font-weight: 700;
+        }
+
+        .package-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .package-card {
+            padding: 1.7rem;
+            position: relative;
+        }
+
+        .package-card.featured {
+            border-color: rgba(212, 175, 101, 0.4);
+            background: linear-gradient(180deg, rgba(29, 25, 18, 0.9), rgba(12, 17, 21, 0.98));
+        }
+
+        .package-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.9rem;
+        }
+
+        .package-price {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.06em;
+            margin: 1rem 0;
+        }
+
+        .package-price span {
+            font-size: 0.9rem;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .package-points {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 1.5rem;
+            display: grid;
+            gap: 0.7rem;
+            color: var(--muted);
+        }
+
+        .package-points li::before {
+            content: "✓";
+            color: var(--gold-strong);
+            margin-right: 0.6rem;
+            font-weight: 700;
+        }
+
+        .gallery-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .gallery-item {
+            position: relative;
+            min-height: 360px;
+            overflow: hidden;
+            border-radius: 26px;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: var(--shadow);
+        }
+
+        .gallery-item::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.52));
+        }
+
+        .gallery-label {
+            position: absolute;
+            left: 1rem;
+            bottom: 1rem;
+            z-index: 1;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .step-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .step-card {
+            padding: 1.5rem;
+        }
+
+        .step-number {
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            color: var(--gold-strong);
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .testimonial {
+            padding: 1.6rem;
+        }
+
+        .stars {
+            color: var(--gold-strong);
+            letter-spacing: 0.15em;
+            margin-bottom: 0.7rem;
+        }
+
+        .person {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding-top: 1.2rem;
+            margin-top: 1.2rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, var(--gold), #8c6a37);
+            color: #0d0d0d;
+            font-weight: 700;
+        }
+
+        .person strong {
+            display: block;
+        }
+
+        .person span {
+            color: var(--muted);
+            font-size: 0.8rem;
+        }
+
+        .contact-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            align-items: stretch;
+        }
+
+        .contact-card {
+            background: linear-gradient(180deg, #111b22, #0d1418);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius);
+            padding: 1.8rem;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-list {
+            list-style: none;
+            margin: 1.5rem 0 0;
+            padding: 0;
+            display: grid;
+            gap: 0.8rem;
+            color: var(--muted);
+        }
+
+        form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .field-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 14px;
+            padding: 0.95rem 1rem;
+            color: var(--text);
+            font: inherit;
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .site-footer {
+            padding: 2rem 0 3rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            background: rgba(5, 9, 12, 0.7);
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            color: var(--muted);
+        }
+
+        @media (max-width: 980px) {
+            .hero-inner,
+            .about-wrap,
+            .contact-wrap {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-grid,
+            .package-grid,
+            .gallery-grid,
+            .step-grid,
+            .testimonial-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 720px) {
+            .nav-links {
+                display: none;
+            }
+
+            .cta-row,
+            .field-row,
+            .section-heading,
+            .footer-inner {
+                display: grid;
+            }
+
+            .feature-grid,
+            .package-grid,
+            .gallery-grid,
+            .step-grid,
+            .testimonial-grid,
+            .field-row {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 660px;
+            }
+
+            .hero-inner {
+                padding-top: 4rem;
+            }
+
+            .stats {
+                gap: 1rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a href="#top" class="brand" aria-label="Good Luck Auto Detailing home">
+                <span class="brand-mark">GL</span>
+                <span> Auto Detailing</span>
+            </a>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#packages">Packages</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <a class="btn btn-primary" href="#contact">Book Now</a>
+        </div>
+    </header>
+
+    <main id="top">
+        <section class="hero">
+            <div class="container hero-inner">
+                <div class="hero-copy">
+                    <div class="eyebrow">Premium Auto Care</div>
+                    <h1>Detailing that makes every drive feel new.</h1>
+                    <p class="lead">From luxury hand washes to paint correction and ceramic protection, we restore shine, protect finishes, and keep your car looking showroom-ready.</p>
+
+                    <div class="cta-row">
+                        <a href="#packages" class="btn btn-primary">View Packages</a>
+                        <a href="#gallery" class="btn btn-secondary">See Our Work</a>
+                    </div>
+
+                    <div class="stats">
+                        <div class="stat">
+                            <strong>200+</strong>
+                            <span>Cars detailed</span>
+                        </div>
+                        <div class="stat">
+                            <strong>2 yrs</strong>
+                            <span>Experience</span>
+                        </div>
+                        <div class="stat">
+                            <strong>5/5</strong>
+                            <span>Client rating</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-card" aria-label="Featured service card">
+                    <div class="card-top">
+                        <span class="mini-label">Featured service</span>
+                        <span class="badge">Most popular</span>
+                    </div>
+
+                    <h2 style="margin:0 0 .5rem; font-size: 1.8rem;">signature detail</h2>
+                    <p style="margin:0; color: var(--muted);">High-gloss finish, fresh interior, and long-lasting shine.</p>
+
+                    <div class="service-preview">
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1000&q=80" alt="Car after detailing" />
+                    </div>
+
+                    <div class="hero-meta">
+                        <span>From $280</span>
+                        <span>3-5 hour turnaround</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Everything your vehicle needs to look its best.</h2>
+                    <p>We combine expert craftsmanship, premium products, and detail-first care to deliver a finish that stands out in any setting.</p>
+                </div>
+
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="icon-circle">✦</div>
+                        <h3>Exterior Wash</h3>
+                        <p>Safe two-bucket hand wash, bug removal, wheel cleaning, and gloss enhancement.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="icon-circle">◌</div>
+                        <h3>Interior Revival</h3>
+                        <p>Deep vacuuming, upholstery treatment, leather conditioning, and odor removal.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="icon-circle">⬡</div>
+                        <h3>Paint Correction</h3>
+                        <p>Precision polishing to remove swirl marks, scratches, and oxidation for a brilliant finish.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="icon-circle">✧</div>
+                        <h3>Ceramic Coating</h3>
+                        <p>Long-term protection with hydrophobic surface performance and a rich, reflective shine.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="container about-wrap">
+                <div class="about-visual">
+                    <div class="about-badge">
+                        <strong>4.9</strong>
+                        <span>Average client score</span>
+                    </div>
+                </div>
+
+                <div class="about-copy">
+                    <div class="eyebrow">Why choose us</div>
+                    <h2 style="font-size: clamp(2.2rem, 4vw, 3rem); margin: 1rem 0; letter-spacing: -0.05em;">Built for drivers who expect perfection.</h2>
+                    <p style="color: var(--muted); font-size:1.02rem;">At Good Luck Auto Detailing, we treat every vehicle like it deserves a luxury finish. Whether it is a daily driver, collector car, or family SUV, our process protects your investment and enhances every mile.</p>
+
+                    <ul>
+                        <li><span class="check">✓</span> Premium, pH-balanced products and tools</li>
+                        <li><span class="check">✓</span> Paint-safe techniques with meticulous attention to detail</li>
+                        <li><span class="check">✓</span> Clear communication and flexible appointment times</li>
+                        <li><span class="check">✓</span> Satisfaction-focused service from start to finish</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="packages">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Detailing packages for every vehicle and lifestyle.</h2>
+                    <p>Choose the level of care that matches your goals, from routine maintenance to premium protection packages.</p>
+                </div>
+
+                <div class="package-grid">
+                    <article class="package-card">
+                        <div class="package-top">
+                            <h3>Interior Care</h3>
+                            <span class="badge">Quick refresh</span>
+                        </div>
+                        <div class="package-price">$200 <span>/ visit</span></div>
+                        <p>Perfect for regular upkeep and a fast interior refresh.</p>
+                        <ul class="package-points">
+                            <li>Interior vacuum</li>
+                            <li>Dashboard and trim wipe-down</li>
+                            <li>Leather or fabric treatment</li>
+                            <li>Glass wipe-down</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-secondary">Book Interior</a>
+                    </article>
+
+                    <article class="package-card featured">
+                        <div class="package-top">
+                            <h3>Signature Detail</h3>
+                            <span class="badge">Best value</span>
+                        </div>
+                        <div class="package-price">$280 <span>/ visit</span></div>
+                        <p>Our most popular option for a clean, polished finish.</p>
+                        <ul class="package-points">
+                            <li>Deep exterior wash</li>
+                            <li>Interior wipe-down and steam clean</li>
+                            <li>Leather and trim conditioning</li>
+                            <li>Wax sealant protection</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary">Book Signature</a>
+                    </article>
+
+                    <article class="package-card">
+                        <div class="package-top">
+                            <h3>Elite Protection</h3>
+                            <span class="badge">Premium care</span>
+                        </div>
+                        <div class="package-price">$899 <span>/ visit</span></div>
+                        <p>Maximum shine, long-lasting protection, and paint refinement.</p>
+                        <ul class="package-points">
+                            <li>Paint correction polish</li>
+                            <li>Ceramic coating application</li>
+                            <li>Interior deep clean</li>
+                            <li>12-month protection plan</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-secondary">Book Elite</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Recent transformations.</h2>
+                    <p>See the difference detail work can make on paint, trim, glass, and interior finishes.</p>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=900&q=80');">
+                        <div class="gallery-label">Gloss finish</div>
+                    </div>
+                    <div class="gallery-item" style="background-image:url('Image%20from%20URL');">
+                        <div class="gallery-label">Interior reset</div>
+                    </div>
+                    <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80');">
+                        <div class="gallery-label">Paint perfection</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Our process keeps it simple.</h2>
+                    <p>Clear steps, premium products, and careful execution from inspection to final inspection.</p>
+                </div>
+
+                <div class="step-grid">
+                    <article class="step-card">
+                        <div class="step-number">01</div>
+                        <h3>Book</h3>
+                        <p>Choose a package and tell us about your vehicle, goals, and preferred date.</p>
+                    </article>
+
+                    <article class="step-card">
+                        <div class="step-number">02</div>
+                        <h3>Inspect</h3>
+                        <p>We assess the finish, interior condition, and any areas that need special care.</p>
+                    </article>
+
+                    <article class="step-card">
+                        <div class="step-number">03</div>
+                        <h3>Detail</h3>
+                        <p>Our team works meticulously through wash, correction, protection, and finishing touches.</p>
+                    </article>
+
+                    <article class="step-card">
+                        <div class="step-number">04</div>
+                        <h3>Deliver</h3>
+                        <p>We walk you through the results and share care recommendations for lasting shine.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Clients trust us to keep their vehicles pristine.</h2>
+                    <p>Real feedback from drivers who care about quality, finish, and long-term protection.</p>
+                </div>
+
+                <div class="testimonial-grid">
+                    <article class="testimonial">
+                        <div class="stars">★★★★★</div>
+                        <p>“My SUV looked like it just rolled off the showroom floor. The attention to detail was incredible and the finish holds up beautifully.”</p>
+                        <div class="person">
+                            <div class="avatar">M</div>
+                            <div>
+                                <strong>Marcus T.</strong>
+                                <span>Luxury SUV owner</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="testimonial">
+                        <div class="stars">★★★★★</div>
+                        <p>“The ceramic coating was worth every penny. Water beads off, the paint looks deeper, and cleanup is a breeze.”</p>
+                        <div class="person">
+                            <div class="avatar">A</div>
+                            <div>
+                                <strong>Alicia R.</strong>
+                                <span>Performance car owner</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="testimonial">
+                        <div class="stars">★★★★★</div>
+                        <p>“Professional, friendly, and extremely thorough. My interior feels brand new again and the exterior is shining.”</p>
+                        <div class="person">
+                            <div class="avatar">J</div>
+                            <div>
+                                <strong>Jordan K.</strong>
+                                <span>Daily commuter</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container contact-wrap">
+                <div class="contact-card">
+                    <div class="eyebrow">Get in touch</div>
+                    <h2 style="font-size: clamp(2rem, 3vw, 2.8rem); margin: 1rem 0; letter-spacing: -0.05em;">Reserve your detail appointment.</h2>
+                    <p>Tell us about your vehicle and the level of service you want, and we’ll help you choose the right package.</p>
+
+                    <ul class="contact-list">
+                        <li>📍 103 basset street, burwood, christchurch</li>
+                        <li>📞 022 158 1915</li>
+                        <li>✉️ goodluckautodetailing@gmail.com</li>
+                        <li>🕒 Mon-Sat | 8:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+
+                <div class="contact-card">
+                    <form>
+                        <div class="field-row">
+                            <input type="text" placeholder="First name" aria-label="First name" />
+                            <input type="text" placeholder="Last name" aria-label="Last name" />
+                        </div>
+                        <div class="field-row">
+                            <input type="email" placeholder="Email address" aria-label="Email address" />
+                            <input type="tel" placeholder="Phone number" aria-label="Phone number" />
+                        </div>
+                        <input type="text" placeholder="Vehicle make and model" aria-label="Vehicle make and model" />
+                        <textarea placeholder="Tell us what service you need..." aria-label="Service details"></textarea>
+                        <button class="btn btn-primary" type="submit">Request Appointment</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <div class="brand" style="font-size: 1rem;">
+                    <span class="brand-mark">GL</span>
+                    <span>Good Luck</span>
+                </div>
+                <p class="footer-copy" style="margin-top:0.7rem;">Luxury detailing with lasting shine.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#services">Services</a>
+                <a href="#packages">Packages</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const button = this.querySelector('button');
+            button.textContent = 'Request Sent';
+            button.disabled = true;
+            button.style.opacity = '0.8';
+        });
+    </script>
+</body>
+</html>
