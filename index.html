@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+</script> 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Good Luck Auto Detailing</title>
@@ -971,17 +973,19 @@
                 </div>
 
                 <div class="contact-card">
-                    <form>
+                    <form action="https://formsubmit.co/goodluckautodetailing@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New service request - Good Luck Auto Detailing" />
+                        <input type="hidden" name="_template" value="table" />
                         <div class="field-row">
-                            <input type="text" placeholder="First name" aria-label="First name" />
-                            <input type="text" placeholder="Last name" aria-label="Last name" />
+                            <input type="text" name="first_name" placeholder="First name" aria-label="First name" autocomplete="given-name" required />
+                            <input type="text" name="last_name" placeholder="Last name" aria-label="Last name" autocomplete="family-name" required />
                         </div>
                         <div class="field-row">
-                            <input type="email" placeholder="Email address" aria-label="Email address" />
-                            <input type="tel" placeholder="Phone number" aria-label="Phone number" />
+                            <input type="email" name="email" placeholder="Email address" aria-label="Email address" autocomplete="email" required />
+                            <input type="tel" name="phone" placeholder="Phone number" aria-label="Phone number" autocomplete="tel" />
                         </div>
-                        <input type="text" placeholder="Vehicle make and model" aria-label="Vehicle make and model" />
-                        <textarea placeholder="Tell us what service you need..." aria-label="Service details"></textarea>
+                        <input type="text" name="vehicle" placeholder="Vehicle make and model" aria-label="Vehicle make and model" />
+                        <textarea name="service_details" placeholder="Tell us what service you need..." aria-label="Service details" required></textarea>
                         <button class="btn btn-primary" type="submit">Request Appointment</button>
                     </form>
                 </div>
@@ -1008,14 +1012,5 @@
         </div>
     </footer>
 
-    <script>
-        document.querySelector('form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const button = this.querySelector('button');
-            button.textContent = 'Request Sent';
-            button.disabled = true;
-            button.style.opacity = '0.8';
-        });
-    </script>
 </body>
 </html>
